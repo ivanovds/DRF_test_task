@@ -5,15 +5,24 @@ from rest_framework.serializers import (
     CharField,
     ValidationError,
     HyperlinkedIdentityField,
+    ChoiceField,
 )
 from .models import Profile
 
 
+class ChoiceField(ChoiceField):
+
+    def to_representation(self, obj):
+        return self._choices[obj]
+
+
 class ProfileSerializer(ModelSerializer):
+    gender = ChoiceField(choices=Profile.GENDER_CHOICES)
 
     class Meta:
         model = Profile
         fields = [
+            'gender',
             'bio',
             'birth_date',
             'location'
@@ -87,6 +96,10 @@ class UserDetailSerializer(ModelSerializer):
         profile_data = validated_data.pop('profile')
         profile = instance.profile
 
+        profile.gender = profile_data.get(
+            'gender',
+            profile.gender
+        )
         profile.bio = profile_data.get(
             'bio',
             profile.bio

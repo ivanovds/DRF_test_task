@@ -5,7 +5,13 @@ from django.dispatch import receiver
 
 
 class Profile(models.Model):
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other')
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    gender = models.CharField(null=True, max_length=1, choices=GENDER_CHOICES)
     bio = models.CharField(null=True, max_length=500, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     location = models.CharField(null=True, max_length=30, blank=True)
