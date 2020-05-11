@@ -1,1 +1,1 @@
-web: gunicorn DRF_test_task.wsgi
+web: gunicorn project.wsgi
