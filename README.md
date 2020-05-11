@@ -1,27 +1,25 @@
-# Social Network REST API
+# Django REST Framework API
 
-REST API that allows you to interact with Social Network.
-It is entirely self describing: you can find the documentation
+
+It is entirely self describing API: you can find the documentation
 for each API endpoint simply by visiting the URL in your browser.
 
-API using JSON Web Authentication. 
 
 ## Using this API you can:
+
 * Create account
-* Create a post with text content (always made by a user)
-* Like any posts
-* Unlike posts, you liked before
-* Get all posts or one of them
-* Get all users or one of them with activity information
-* Get analytics about how many likes were made
-* Read API bot configuration
-* Get JSON Web Token
-* Refresh JSON Web Token
+* Log in if you already have an account
+* Fill your profile
+* Read profiles of other users
+* Edit your own profile
+* Edit any profile if you have staff status
+
 
 ## Technology stack
-* Django Framework 3.0.5
+* Django Framework 3.0.6
 * Django REST Framework 3.11.0
-* Django REST Framework JWT 1.11.0
+* PostgreSQL 12
+
 
 ## Installation
 * Create a virtual environment:
@@ -35,8 +33,16 @@ On Windows:
 py -m venv venv
 ```
 
-* Go to File -> Settings -> Project Interpreter -> 
-add interpreter: path_to_project\project-container\project-container\venv\Scripts\python.exe 
+* Switch your virtal environment in the terminal:
+
+On macOS and Linux:
+```bash
+source venv/bin/activate
+```
+On Windows:
+```bash
+venv\Scripts\activate
+```
 
 * Then install all packages you need.
 
@@ -54,41 +60,34 @@ pip install -r requirements.txt
 ```bash
 py manage.py runserver
 ```
-and visit http://127.0.0.1:8000/api/ 
-
+and visit http://127.0.0.1:8000/api/v1/
 
 ## Documentation
 
 API root view:
-![step1](static/img/readme/1.png?raw=true "Title")
-
-Post API:
-![step2](static/img/readme/2.png?raw=true "Title")
+![step1](staticfiles/img/readme/1.jpg?raw=true "Title")
 
 User List-Create view:
-![step3](static/img/readme/3.png?raw=true "Title")
+![step3](staticfiles/img/readme/2.jpg?raw=true "Title")
 
-Analytics view:
-![step4](static/img/readme/4.png?raw=true "Title")
+User List-Create view::
+![step4](staticfiles/img/readme/3.jpg?raw=true "Title")
 
-Filtered analytics view:
-![step4](static/img/readme/5.png?raw=true "Title")
+User detail view:
+(admin can edit any profile)
+![step4](staticfiles/img/readme/4.jpg?raw=true "Title")
 
-Get Token view:
-![step4](static/img/readme/6.png?raw=true "Title")
+User detail view:
+(admin can edit any profile)
+![step4](staticfiles/img/readme/5.jpg?raw=true "Title")
 
-Refresh Token view:
-![step4](static/img/readme/7.png?raw=true "Title")
+User detail view:
+(user can edit only his own profile)
+![step4](staticfiles/img/readme/6.jpg?raw=true "Title")
 
-API config view:
-![step4](static/img/readme/8.png?raw=true "Title")
+Login view:
+![step4](staticfiles/img/readme/7.jpg?raw=true "Title")
 
-
-## Usage
-To prove authentication for a protected views you can use:
-* [python requests](https://requests.readthedocs.io/en/master/)
-* [httpie](https://httpie.org/)
-* [postman](https://www.postman.com/)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
