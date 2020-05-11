@@ -19,8 +19,7 @@ SECRET_KEY = 'D({yAr)q!s"0sP}p^kiMHS!=eppU=r=j%CrGykZn>.&DE7YcmO'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = ['https://drf2020.herokuapp.com/', '127.0.0.1']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://drf2020.herokuapp.com/', '127.0.0.1']
 
 # Application definition
 
