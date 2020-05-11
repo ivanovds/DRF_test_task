@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z!zeohbja5tzvrw_yc+z@4cqi4o-cuz_fudnzb!%u!(hc))$8+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://drf2020.herokuapp.com/', '127.0.0.1']
 
