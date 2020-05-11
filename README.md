@@ -1,5 +1,6 @@
 # Django REST Framework API
 
+Link to the API on Heroku: https://drf2020.herokuapp.com/api/v1/
 
 It is entirely self describing API: you can find the documentation
 for each API endpoint simply by visiting the URL in your browser.
