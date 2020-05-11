@@ -11,6 +11,7 @@ from .models import Profile
 
 
 class ChoiceField(ChoiceField):
+    """Makes human-readable ChoiceField"""
 
     def to_representation(self, obj):
         return self._choices[obj]

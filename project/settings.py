@@ -20,7 +20,7 @@ SECRET_KEY = 'z!zeohbja5tzvrw_yc+z@4cqi4o-cuz_fudnzb!%u!(hc))$8+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['https://drf2020.herokuapp.com/', '127.0.0.1']
 
 # Application definition
 
@@ -82,10 +82,6 @@ DATABASES = {
     }
 }
 
-# adding Postgresql DataBase on Heroku:
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -137,7 +133,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
-
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
         'rest_framework.throttling.UserRateThrottle'
@@ -148,7 +143,5 @@ REST_FRAMEWORK = {
     },
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100,
-
     'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
-
 }

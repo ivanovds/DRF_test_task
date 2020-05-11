@@ -19,10 +19,16 @@ class Profile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
+    """Signal to automatically create profile
+    when we create a standard user model.
+    """
     if created:
         Profile.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
+    """Signal to automatically update profile
+    when we update a standard user model.
+    """
     instance.profile.save()

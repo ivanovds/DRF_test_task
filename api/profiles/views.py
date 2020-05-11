@@ -1,5 +1,3 @@
-from django.shortcuts import redirect
-from django.contrib.auth import authenticate, login
 from rest_framework.generics import (
     RetrieveUpdateAPIView,
     ListCreateAPIView,

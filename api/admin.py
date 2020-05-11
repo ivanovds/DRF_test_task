@@ -5,9 +5,9 @@ from api.profiles.models import Profile
 
 
 class ProfileModelAdmin(admin.ModelAdmin):
-    list_display = ["user", "bio", "birth_date", "location"]
-    # list_filter = [""]
-    # search_fields = ["user"]
+    list_display = ["user", "gender", "bio", "birth_date", "location"]
+    list_filter = ["gender"]
+    search_fields = ["user"]
 
     class Meta:
         model = Profile
